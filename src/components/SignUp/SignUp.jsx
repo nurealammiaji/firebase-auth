@@ -4,7 +4,7 @@ const SignUp = () => {
     return (
         <div>
             <br /><br />
-            <div className="text-black bg-violet-200 rounded-2xl">
+            <div className="rounded-2xl">
                 <h3>Sign Up</h3>
             </div>
         </div>
