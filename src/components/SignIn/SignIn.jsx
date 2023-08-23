@@ -5,7 +5,7 @@ const SignIn = () => {
     return (
         <div>
             <br /><br />
-            <div className="min-h-screen hero bg-base-200 rounded-xl">
+            <div className="py-10 hero bg-base-200 rounded-xl">
                 <div className="hero-content">
                     <div className="w-full max-w-sm shadow-2xl card bg-base-100">
                         <form className="card-body">
@@ -20,9 +20,14 @@ const SignIn = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" />
-                                <label className="label">
-                                    <Link to="/forgot" className="label-text-alt link link-hover">Forgot password?</Link>
-                                </label>
+                                <div className="flex justify-between">
+                                    <label className="label">
+                                        <Link to="/forgot" className="label-text-alt link link-hover">Forgot password?</Link>
+                                    </label>
+                                    <label className="label">
+                                        <Link to="/sign-up" className="label-text-alt link link-hover">Need Account?</Link>
+                                    </label>
+                                </div>
                             </div>
                             <div className="mt-2 form-control">
                                 <button type="submit" className="btn btn-primary">Sign In</button>
