@@ -28,7 +28,7 @@ const Navigation = () => {
                 <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-in">Sign In</NavLink>
             </div>
             <div>
-                {user ? <><p>{user.email}</p><button className="px-4 py-3 mx-2 text-white bg-violet-500 rounded-3xl" onClick={signOutHandle}>Sign Out</button></> : <><Link to="/sign-in"><button className="px-4 py-3 mx-2 text-white bg-success rounded-3xl">Sign In</button></Link></>}
+                {user ? <><p>{user.email}</p><button className="mx-2 btn btn-active btn-neutral" onClick={signOutHandle}>Sign Out</button></> : <><p className="mx-2">Please, Sign In !!</p></>}
             </div>
         </nav>
     );
