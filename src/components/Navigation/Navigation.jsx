@@ -24,8 +24,8 @@ const Navigation = () => {
             </div>
             <div className="[&>*]:px-4 [&>*]:py-2">
                 <NavLink className="text-lg normal-case btn btn-ghost" to="/">Home</NavLink>
-                <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-up">Sign Up</NavLink>
-                <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-in">Sign In</NavLink>
+                {user ? '' : <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-up">Sign Up</NavLink>}
+                {user ? '' : <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-in">Sign In</NavLink>}
                 {user && <NavLink className="text-lg normal-case btn btn-ghost" to="/profile">Profile</NavLink>}
             </div>
             <div>

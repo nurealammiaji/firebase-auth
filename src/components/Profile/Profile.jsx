@@ -10,7 +10,7 @@ const Profile = () => {
         <div>
             <br /><br />
             <div className="py-10 hero bg-base-200 rounded-xl">
-            <h3>Email: {user.email}</h3>
+            <h3 className="text-xl"><span className="font-semibold">Email:</span> {user.email}</h3>
             </div>
         </div>
     );
