@@ -26,9 +26,10 @@ const Navigation = () => {
                 <NavLink className="text-lg normal-case btn btn-ghost" to="/">Home</NavLink>
                 <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-up">Sign Up</NavLink>
                 <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-in">Sign In</NavLink>
+                {user && <NavLink className="text-lg normal-case btn btn-ghost" to="/profile">Profile</NavLink>}
             </div>
             <div>
-                {user ? <><p>{user.email}</p><button className="mx-2 btn btn-active btn-neutral" onClick={signOutHandle}>Sign Out</button></> : <><p className="mx-2">Please, Sign In !!</p></>}
+                {user ? <><p>{user.email}</p><button className="mx-2 btn btn-active btn-neutral btn-xs" onClick={signOutHandle}>Sign Out</button></> : <><p className="mx-2">Please, Sign In !!</p></>}
             </div>
         </nav>
     );

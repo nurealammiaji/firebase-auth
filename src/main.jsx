@@ -12,6 +12,8 @@ import SignUp from './components/SignUp/SignUp';
 import SignIn from './components/SignIn/SignIn';
 import Forgot from './components/Forgot/Forgot.jsx';
 import AuthProviders from './components/Providers/AuthProviders.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import Profile from './components/Profile/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "forgot",
         element: <Forgot></Forgot>
+      },
+      {
+        path: "profile",
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       }
     ]
   }
