@@ -5,7 +5,17 @@ import { AuthContext } from "../Providers/AuthProviders";
 
 const Navigation = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, signOutHandler } = useContext(AuthContext);
+
+    const signOutHandle = () => {
+        signOutHandler()
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
 
     return (
         <nav className="justify-between navbar bg-primary text-primary-content rounded-2xl">
@@ -18,7 +28,7 @@ const Navigation = () => {
                 <NavLink className="text-lg normal-case btn btn-ghost" to="/sign-in">Sign In</NavLink>
             </div>
             <div>
-                {user ? <><p>{user.email}</p><button className="px-4 py-3 mx-2 bg-white rounded-3xl">Sign Out</button></> : <><button>Sign In</button></>}
+                {user ? <><p>{user.email}</p><button className="px-4 py-3 mx-2 bg-error rounded-3xl" onClick={signOutHandle}>Sign Out</button></> : <><Link to="/sign-in"><button className="px-4 py-3 mx-2 text-white bg-success rounded-3xl">Sign In</button></Link></>}
             </div>
         </nav>
     );
