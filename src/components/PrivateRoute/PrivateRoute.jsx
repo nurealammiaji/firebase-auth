@@ -5,7 +5,11 @@ import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({children}) => {
 
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <><br /><br /><br /><br /><progress className="w-56 progress"></progress></>
+    }
 
     if (user) {
         return children;
