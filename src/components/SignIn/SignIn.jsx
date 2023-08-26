@@ -4,7 +4,7 @@ import { AuthContext } from "../Providers/AuthProviders";
 
 const SignIn = () => {
 
-    const { signInHandler } = useContext(AuthContext);
+    const { signInHandler, googleSignInHandler } = useContext(AuthContext);
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -21,6 +21,17 @@ const SignIn = () => {
             console.log(error.message);
         })
         form.reset();
+    }
+
+    const googleSignIn = () => {
+        googleSignInHandler()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
     }
 
     return (
@@ -52,6 +63,8 @@ const SignIn = () => {
                             </div>
                             <div className="mt-2 form-control">
                                 <button type="submit" className="btn btn-primary">Sign In</button>
+                                <p className="my-2 italic">or</p>
+                                <button onClick={googleSignIn} type="button" className="btn btn-primary">Sign In with Google</button>
                             </div>
                         </form>
                     </div>
